@@ -1,19 +1,24 @@
 package com.rahulchaube.simpletaskkotline.ui.fragments
 
 import android.content.Context
+import android.graphics.BitmapFactory
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.rahulchaube.simpletaskkotline.R
 import com.rahulchaube.simpletaskkotline.data.entity.Book
+import java.io.File
+
 
 class BookAdapter internal constructor(context:Context?):
     RecyclerView.Adapter<BookAdapter.ViewHolder>() {
 
+    val context:Context?=context;
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var words = emptyList<Book>()
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -43,6 +48,22 @@ class BookAdapter internal constructor(context:Context?):
         holder.textViewAutherName.text=words.get(position).authorName
         holder.textViewDoi.text=words.get(position).doi
         holder.textViewPrice.text=words.get(position).price
+
+        Log.e("Image Fle "," path  "+words.get(position).images)
+
+        val images=words.get(position).images.split(",")
+
+        val imgFile = File(images.get(0))
+
+        Log.e("Image Fle **** "," path  "+imgFile.absolutePath)
+        if (imgFile.exists()) {
+            val myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath())
+            holder.coverImage.setImageBitmap(myBitmap)
+//
+//            if (context != null) {
+//                Glide.with(context).load(imgFile).into(holder.coverImage)
+//            }
+        }
     }
 
 

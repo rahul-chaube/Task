@@ -9,5 +9,15 @@
         android:id="@+id/recyclerview_tasks"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:id="@+id/empty"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:text="No Book Entry "
+        android:layout_height="wrap_content"/>
 
 </FrameLayout>
