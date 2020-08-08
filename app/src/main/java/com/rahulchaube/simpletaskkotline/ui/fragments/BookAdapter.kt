@@ -1,15 +1,17 @@
 package com.rahulchaube.simpletaskkotline.ui.fragments
 
+import android.app.Activity
+import android.app.Dialog
 import android.content.Context
 import android.graphics.BitmapFactory
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.rahulchaube.simpletaskkotline.R
 import com.rahulchaube.simpletaskkotline.data.entity.Book
 import java.io.File
@@ -65,6 +67,4 @@ class BookAdapter internal constructor(context:Context?):
 //            }
         }
     }
-
-
 }
