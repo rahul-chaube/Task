@@ -120,7 +120,7 @@ var imageList:String="";
             .toolbarArrowColor(Color.BLACK) // Toolbar 'up' arrow color
             .includeVideo(false) // Show video on image picker
             .multi() // multi mode (default mode)
-            .limit(3) // max images can be selected (99 by default)
+            .limit(10) // max images can be selected (99 by default)
             .showCamera(true) // show camera or not (true by default)
             .imageDirectory("Camera") // directory name for captured image  ("Camera" folder by default)
             .start(); // start image picker activity with request code
